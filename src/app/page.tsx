@@ -1,5 +1,5 @@
 import React from "react";
-import HistoryCard from "./components/HistoryCard";
+import HistoryList from "./components/HistoryList";
 
 
 const Home = () => {
@@ -25,39 +25,7 @@ const Home = () => {
       <div className="text-start max-w-2xl mx-auto py-4">
         <h3 className="font-bold text-xl">History</h3>
         <hr className="my-4" />
-        <section className="max-h-96 overflow-y-auto">
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-          <HistoryCard original="https://www.google.com" shortened="https://www.google.com" />
-        </section>
+        <HistoryList />
       </div>
       <p className="text-slate-400">
         Made with ❤️ by{" "}
