@@ -78,7 +78,8 @@ const Form = () => {
           <p className="p-4 w-full bg-blue-300 text-start text-slate-950">
             {generatedUrl}
           </p>
-          <ActionButtons shortenedUrl={generatedUrl} />
+          <ActionButtons 
+            shortenedUrl={generatedUrl} />
           <button onClick={handleClear} className="p-4 bg-red-500">
             <MdOutlineClear />
           </button>
