@@ -5,11 +5,13 @@ import React, { useState } from "react";
 import ActionButtons from "./ActionButtons";
 import { MdOutlineClear } from "react-icons/md";
 import { baseUrl } from "../lib";
+import { CgSpinner } from "react-icons/cg";
 
 const Form = () => {
   const [urlInput, setUrlInput] = useState("");
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [generatedUrl, setGeneratedUrl] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUrlInput(e.target.value);
@@ -21,6 +23,7 @@ const Form = () => {
   };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const longUrl = formData.get("longurl") as string;
@@ -40,8 +43,10 @@ const Form = () => {
       } else {
         setGeneratedUrl(shortenedUrl);
       }
+      setLoading(false);
     } catch (error) {
       alert(`Failed to shorten URL: ${error}`);
+      setLoading(false);
     }
   };
 
@@ -70,7 +75,7 @@ const Form = () => {
               : "bg-blue-500 hover:bg-blue-600 active:bg-blue-700"
           } text-white disabled:cursor-not-allowed`}
         >
-          Shorten URL
+          {loading ? <CgSpinner className="animate-spin w-14" /> : "Shorten"}
         </button>
       </section>
       {generatedUrl && (
@@ -79,7 +84,10 @@ const Form = () => {
             {generatedUrl}
           </p>
           <ActionButtons shortenedUrl={generatedUrl} />
-          <button onClick={handleClear} className="p-4 bg-red-500 hover:bg-red-600 active:bg-red-700 text-white">
+          <button
+            onClick={handleClear}
+            className="p-4 bg-red-500 hover:bg-red-600 active:bg-red-700 text-white"
+          >
             <MdOutlineClear />
           </button>
         </section>
