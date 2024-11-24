@@ -60,13 +60,13 @@ const Form = () => {
           placeholder="Enter your URL"
           value={urlInput}
           onChange={handleInputChange}
-          className="p-4 w-full focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-offset-2 ring-offset-slate-950 flex-1 text-slate-950"
+          className="border-2 border-slate-300 bg-slate-100 p-4 w-full focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-offset-2 dark:ring-offset-slate-950 flex-1 text-slate-950"
         />
         <button
           disabled={isButtonDisabled}
-          className={`px-8 py-4 ${
+          className={`px-8 py-4 backdrop-blur-3xl ${
             isButtonDisabled
-              ? "bg-blue-500 opacity-50"
+              ? "bg-blue-500 dark:opacity-50"
               : "bg-blue-500 hover:bg-blue-600 active:bg-blue-700"
           } text-white disabled:cursor-not-allowed`}
         >
@@ -79,7 +79,7 @@ const Form = () => {
             {generatedUrl}
           </p>
           <ActionButtons shortenedUrl={generatedUrl} />
-          <button onClick={handleClear} className="p-4 bg-red-500">
+          <button onClick={handleClear} className="p-4 bg-red-500 hover:bg-red-600 active:bg-red-700 text-white">
             <MdOutlineClear />
           </button>
         </section>

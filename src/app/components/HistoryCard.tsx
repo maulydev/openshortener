@@ -15,7 +15,7 @@ const HistoryCard = ({
   return (
     <div className="flex justify-between shadow-lg shadow-slate-900 py-4">
       <span className="select-none">
-        <p>{shortenedUrl}</p>
+        <p className="text-slate-900 dark:text-slate-50">{shortenedUrl}</p>
         <small className="block text-slate-500 truncate w-96">
           {longUrl || "No URL provided"}
         </small>

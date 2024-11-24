@@ -20,13 +20,13 @@ const ActionButtons = ({ shortenedUrl }: { shortenedUrl: string }) => {
       <Link
         target="_blank"
         href={shortenedUrl}
-        className="p-4 bg-slate-800 block"
+        className="p-4 dark:bg-slate-800 dark:hover:bg-slate-700 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 block text-white"
       >
         <LuExternalLink />
       </Link>
-      <button className="bg-slate-800 p-4" onClick={copyToClipboard}>
+      <button className="dark:bg-slate-800 dark:hover:bg-slate-700 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-4" onClick={copyToClipboard}>
         {copied ? (
-          <IoCheckmark className="text-blue-500" />
+          <IoCheckmark className="text-green-500" />
         ) : (
           <LuClipboardCopy />
         )}

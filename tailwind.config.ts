@@ -8,4 +8,5 @@ export default {
   ],
   theme: {},
   plugins: [],
+  darkMode: "class",
 } satisfies Config;
