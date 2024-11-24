@@ -53,18 +53,18 @@ const Form = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <section className="space-x-2 !mt-12 max-w-2xl mx-auto flex">
+      <section className="gap-2 !mt-12 max-w-2xl mx-auto flex flex-col md:flex-row">
         <input
           name="longurl"
           type="text"
           placeholder="Enter your URL"
           value={urlInput}
           onChange={handleInputChange}
-          className="border-2 border-slate-300 bg-slate-100 p-4 w-full focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-offset-2 dark:ring-offset-slate-950 flex-1 text-slate-950"
+          className="border-2 border-slate-300 bg-slate-100 p-2 md:p-4 w-full focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-offset-2 dark:ring-offset-slate-950 flex-1 text-slate-950"
         />
         <button
           disabled={isButtonDisabled}
-          className={`px-8 py-4 backdrop-blur-3xl ${
+          className={`px-8 md:py-4 py-2 backdrop-blur-3xl ${
             isButtonDisabled
               ? "bg-blue-500 dark:opacity-50"
               : "bg-blue-500 hover:bg-blue-600 active:bg-blue-700"
