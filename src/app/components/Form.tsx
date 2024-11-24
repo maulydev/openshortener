@@ -75,12 +75,18 @@ const Form = () => {
               : "bg-blue-500 hover:bg-blue-600 active:bg-blue-700"
           } text-white disabled:cursor-not-allowed`}
         >
-          {loading ? <CgSpinner className="animate-spin w-14" /> : "Shorten"}
+          {loading ? (
+            <span className="block py-1">
+              <CgSpinner className="animate-spin w-14 mx-auto" />
+            </span>
+          ) : (
+            "Shorten"
+          )}
         </button>
       </section>
       {generatedUrl && (
         <section className="mt-4 flex max-w-2xl mx-auto space-x-2">
-          <p className="p-4 w-full bg-blue-300 text-start text-slate-950">
+          <p className="p-4 w-full bg-blue-300 text-start text-slate-950 truncate">
             {generatedUrl}
           </p>
           <ActionButtons shortenedUrl={generatedUrl} />

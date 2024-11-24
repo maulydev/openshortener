@@ -24,7 +24,7 @@ const ActionButtons = ({ shortenedUrl }: { shortenedUrl: string }) => {
       >
         <LuExternalLink />
       </Link>
-      <button className="dark:bg-slate-800 dark:hover:bg-slate-700 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-4" onClick={copyToClipboard}>
+      <button type="button" className="dark:bg-slate-800 dark:hover:bg-slate-700 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white p-4" onClick={copyToClipboard}>
         {copied ? (
           <IoCheckmark className="text-green-500" />
         ) : (
