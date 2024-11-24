@@ -2,7 +2,6 @@
 
 import { shortenUrl } from "@/actions/shortenUrl";
 import React, { useState } from "react";
-import { toast } from "react-toastify";
 import ActionButtons from "./ActionButtons";
 import { MdOutlineClear } from "react-icons/md";
 import { baseUrl } from "../lib";
@@ -27,7 +26,8 @@ const Form = () => {
     const longUrl = formData.get("longurl") as string;
 
     if (!longUrl) {
-      return toast.error("Long URL is required");
+      alert("Long URL is required");
+      return;
     }
 
     try {
@@ -78,8 +78,7 @@ const Form = () => {
           <p className="p-4 w-full bg-blue-300 text-start text-slate-950">
             {generatedUrl}
           </p>
-          <ActionButtons 
-            shortenedUrl={generatedUrl} />
+          <ActionButtons shortenedUrl={generatedUrl} />
           <button onClick={handleClear} className="p-4 bg-red-500">
             <MdOutlineClear />
           </button>
