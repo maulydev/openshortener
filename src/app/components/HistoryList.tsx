@@ -7,13 +7,17 @@ const HistoryList = async () => {
 
   return (
     <section className="max-h-96 overflow-y-auto">
-      {urls.map((url) => (
-        <HistoryCard
-          key={url.id}
-          longUrl={url.longUrl}
-          uniqueId={url.uniqueId}
-        />
-      ))}
+      {urls?.length > 0 ? (
+        urls.map((url) => (
+          <HistoryCard
+            key={url.id}
+            longUrl={url.longUrl}
+            uniqueId={url.uniqueId}
+          />
+        ))
+      ) : (
+        <p className="p-4 text-slate-400">No history available.</p>
+      )}
     </section>
   );
 };

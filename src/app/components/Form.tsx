@@ -36,12 +36,12 @@ const Form = () => {
       const shortenedUrl = `${baseUrl}/${response.uniqueId}`;
 
       if (typeof response === "string") {
-        toast.error(response);
+        alert(response);
       } else {
         setGeneratedUrl(shortenedUrl);
       }
     } catch (error) {
-      toast.error(`Failed to shorten URL: ${error}`);
+      alert(`Failed to shorten URL: ${error}`);
     }
   };
 
