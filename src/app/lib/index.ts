@@ -1,3 +1,6 @@
+export const baseUrl =
+  typeof window !== "undefined" ? window.location.origin : "";
+
 export const generateUniqueId = (length = 6) => {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

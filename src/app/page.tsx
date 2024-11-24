@@ -1,6 +1,6 @@
 import React from "react";
+import Form from "./components/Form";
 import HistoryList from "./components/HistoryList";
-
 
 const Home = () => {
   return (
@@ -11,16 +11,8 @@ const Home = () => {
         simple and efficient way to shorten long URLs, making them easier to
         share and manage.
       </p>
-      <form className="space-x-4 !mt-12 max-w-2xl mx-auto flex">
-        <input
-          type="text"
-          placeholder="Enter your URL"
-          className="p-4 w-full focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-offset-2 ring-offset-slate-950 flex-1"
-        />
-        <button className="px-8 py-4 bg-blue-500 text-white">
-          Shorten URL
-        </button>
-      </form>
+
+      <Form />
 
       <div className="text-start max-w-2xl mx-auto py-4">
         <h3 className="font-bold text-xl">History</h3>

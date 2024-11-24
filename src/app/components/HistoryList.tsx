@@ -3,7 +3,7 @@ import HistoryCard from "./HistoryCard";
 import prisma from "../lib/prisma";
 
 const HistoryList = async () => {
-  const urls = await prisma.shorturl.findMany();
+  const urls = (await prisma.shorturl.findMany()).toReversed();
 
   return (
     <section className="max-h-96 overflow-y-auto">

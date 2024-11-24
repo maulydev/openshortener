@@ -1,8 +1,7 @@
-"use client"
+"use client";
 
-import React, { useState } from "react";
-import { IoCheckmark } from "react-icons/io5";
-import { LuClipboardCopy } from "react-icons/lu";
+import { baseUrl } from "../lib";
+import ActionButtons from "./ActionButtons";
 
 const HistoryCard = ({
   longUrl,
@@ -11,29 +10,18 @@ const HistoryCard = ({
   longUrl: string;
   uniqueId: string;
 }) => {
-  const [copied, setCopied] = useState(false);
-
-  const shortenedUrl = window.location.origin + "/" + uniqueId;
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(shortenedUrl || "https://www.example.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  
+  const shortenedUrl = `${baseUrl}/${uniqueId}`;
 
   return (
-    <div className="flex justify-between shadow-lg shadow-slate-900 p-4">
-      <span  className="select-none">
-        <p>{shortenedUrl || "https://www.example.com"}</p>
-        <small className="text-slate-500">
-          {longUrl || "https://www.example.com"}
+    <div className="flex justify-between shadow-lg shadow-slate-900 py-4">
+      <span className="select-none">
+        <p>{shortenedUrl}</p>
+        <small className="block text-slate-500 truncate w-96">
+          {longUrl || "No URL provided"}
         </small>
       </span>
-      <button className="bg-slate-800 p-4" onClick={copyToClipboard}>
-        {copied ? <IoCheckmark className="text-blue-500" /> : <LuClipboardCopy />}
-      </button>
+
+      <ActionButtons shortenedUrl={shortenedUrl} />
     </div>
   );
 };
