@@ -13,7 +13,7 @@ const HistoryCard = ({
   const shortenedUrl = `${baseUrl}/${uniqueId}`;
 
   return (
-    <div className="flex justify-between shadow-lg shadow-slate-900 py-4 gap-4">
+    <div className="flex justify-between shadow-md dark:shadow-lg dark:shadow-slate-900 py-4 gap-4">
       <span className="select-none w-full line-clamp-1">
         <p className="text-slate-900 dark:text-slate-50">{shortenedUrl}</p>
         <small className="block text-slate-500 truncate md:w-96">
