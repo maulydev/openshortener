@@ -12,7 +12,12 @@ const Redirect = async ({ params}: { params: Promise<{ uniqueId: string }>}) => 
   });
 
   if (url) {
-    redirect(url.longUrl);
+    // Ensure URL has a protocol before redirecting
+    let redirectUrl = url.longUrl;
+    if (!redirectUrl.startsWith('http://') && !redirectUrl.startsWith('https://')) {
+      redirectUrl = 'https://' + redirectUrl;
+    }
+    redirect(redirectUrl);
   }
 };
 

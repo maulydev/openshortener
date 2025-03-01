@@ -61,7 +61,7 @@ const Form = () => {
       <section className="gap-2 !mt-12 max-w-2xl mx-auto flex flex-col md:flex-row">
         <input
           name="longurl"
-          type="text"
+          type="url"
           placeholder="Enter your URL"
           value={urlInput}
           onChange={handleInputChange}
